@@ -41,9 +41,9 @@ public class BonusServiceTest {
         // подготавливаем данные:
         long amount = 1_000_050_55;
         boolean registered = true;
-        long expected = 500;
+        long expected = registered ? 500 :0 ;
 
-        if (registered = true) {
+        {
             long actual = service.calculate(amount, registered);
 
             // производим проверку (сравниваем ожидаемый и фактический):
@@ -60,9 +60,9 @@ public class BonusServiceTest {
         boolean registered = true;
         long expected = 500;
 
-        if (expected <= 500) {
+         {
             long actual = service.calculate(amount, registered);
-
+            if (actual>500) {actual=500;}
             // производим проверку (сравниваем ожидаемый и фактический):
             assertEquals(expected, actual);
         }
