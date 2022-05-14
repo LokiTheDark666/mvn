@@ -43,12 +43,14 @@ public class BonusServiceTest {
         boolean registered = true;
         long expected = 500;
 
-        if (registered=true){
-        long actual = service.calculate(amount, registered);
+        if (registered = true) {
+            long actual = service.calculate(amount, registered);
 
-        // производим проверку (сравниваем ожидаемый и фактический):
-        assertEquals(expected, actual);}
+            // производим проверку (сравниваем ожидаемый и фактический):
+            assertEquals(expected, actual);
+        }
     }
+
     @org.junit.jupiter.api.Test
     void shouldCalculateForRegisteredAndifOverLimit() {
         BonusService service = new BonusService();
@@ -58,11 +60,12 @@ public class BonusServiceTest {
         boolean registered = true;
         long expected = 500;
 
-        if (expected<=500){
+        if (expected <= 500) {
             long actual = service.calculate(amount, registered);
 
             // производим проверку (сравниваем ожидаемый и фактический):
-            assertEquals(expected, actual);}
+            assertEquals(expected, actual);
+        }
     }
 
 }
